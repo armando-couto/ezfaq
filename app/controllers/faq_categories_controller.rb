@@ -21,7 +21,7 @@ class FaqCategoriesController < ApplicationController
   layout 'base'
   menu_item :ezfaq, :only => [:index, :edit, :destroy]
   
-  before_filter :find_project
+  before_filter :find_project, :authorize
   verify :method => :post, :only => :destroy
   verify :mothod => :post, :only => :change_order
 

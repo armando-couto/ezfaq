@@ -19,7 +19,7 @@ class EzfaqController < ApplicationController
   unloadable
   
   layout 'base'  
-  before_filter :find_project
+  before_filter :find_project, :authorize
   before_filter :find_faq, :only => [:show, :edit, :copy, :destroy, :history, :show_history_version]
   
   helper :attachments
